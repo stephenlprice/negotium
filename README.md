@@ -19,5 +19,5 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Quid est **negotii**?*<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*What **thing** is it?*
 
-![By Pascal Radigue - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=4966082](./public/assets/images/640px-Mosaique_echansons_Bardo.jpg)<br>
+![By Pascal Radigue - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=4966082](./src/assets/images/640px-Mosaique_echansons_Bardo.jpg)<br>
 >*By Pascal Radigue - Own work, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=4966082*
