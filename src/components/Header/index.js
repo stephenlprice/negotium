@@ -5,7 +5,14 @@ function Header() {
   return (
     <nav className="navbar navbar-dark">
       <div className="container-fluid d-flex justify-content-center">
-          <span id="brand" className="navbar-brand mb-0 h1">NEGOTIUM</span>
+        <div className="row">
+          <div className="col-12 d-flex justify-content-center">
+            <span id="brand" className="navbar-brand d-flex mb-0 h1">NEGOTIUM</span>
+          </div>
+          <div className="col-12 d-flex justify-content-center text-light">
+            <h3>Employee Directory</h3>
+          </div>
+        </div>
       </div>
     </nav>
   )
