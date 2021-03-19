@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import _ from "lodash";
 import API from "../../utils/API";
 import Header from "../../components/Header";
 import ListContainer from "../../components/ListContainer";
@@ -22,6 +23,10 @@ function Directory() {
       })
       .catch(err => console.log(err));
   }, []);
+
+  const handleFilterChange = event => {
+    setList();
+  };
 
   return (
     <div>
