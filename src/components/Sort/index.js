@@ -7,16 +7,16 @@ import "./style.css";
 
 function Sort() {
   return (
-    <section className="container bg-transparent d-none d-md-block">
+    <section className="container bg-transparent">
       <div className="row">
-        <div className="col col-md-2 d-flex justify-content-center text-center"/>
+        <div className="col col-md-2 d-none d-md-block"/>
         <div className="col col-md-2 d-flex justify-content-center text-center">
           <h4><FontAwesomeIcon icon={faSort}/></h4>
         </div>
-        <div className="col col-md-5 d-flex justify-content-center text-center">
+        <div className="col col-md-5 d-none d-md-block text-center">
           <h4><FontAwesomeIcon icon={faEnvelope}/></h4>
         </div>
-        <div className="col col-md-3 d-flex justify-content-center text-center">
+        <div className="col col-md-3 d-none d-md-block text-center">
           <h4><FontAwesomeIcon icon={faPhone}/></h4>
         </div>
       </div>
