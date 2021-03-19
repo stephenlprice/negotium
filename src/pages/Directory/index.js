@@ -7,9 +7,17 @@ import EmployeesContext from "../../utils/EmployeesContext";
 
 function Directory() {
   document.title = "NEGOTIUM";
-  const [employeeState, setEmployeeState] = useState({
-    list: []
-  });
+  const [list, setListState] = useState([]);
+  const [query, setQueryState] = useState([]);
+
+  const handleSort = (direction) => {
+    if (direction === 'asc') {
+      _.orderBy(list, 'asc');
+    }
+    else if (direction === 'desc') {
+      _.orderBy(list, 'desc');
+    }
+  };
 
   useEffect(() => {
     API.getList()
@@ -20,14 +28,17 @@ function Directory() {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
-        setEmployeeState({list: res.data.results});
+        setListState(res.data.results);
+        setQueryState(res.data.results);
       })
       .catch(err => console.log(err));
   }, []);
 
+  handleSort();
+
   return (
     <div>
-      <EmployeesContext.Provider value={employeeState}>
+      <EmployeesContext.Provider value={{list, query, handleSort}}>
         <Header/>
         <ListContainer/>
       </EmployeesContext.Provider>
