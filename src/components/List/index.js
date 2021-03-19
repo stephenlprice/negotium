@@ -3,7 +3,10 @@ import "./style.css";
 import Profile from "../Profile/";
 import Sort from "../Sort/";
 
-function List() {
+function List(props) {
+  console.log('List props', props);
+  const employees = props.employees;
+
   return (
     <div className="container">
       <div className="row">
@@ -11,7 +14,15 @@ function List() {
           <section  className="container rounded shadow-lg my-3 p-3">
             <Sort/>
             <hr className="d-none d-md-block"></hr>
-            <Profile/>
+            {employees.length ? (
+              employees.map(employee => (
+                <section key={Math.random().toString(36).substr(2, 9)}>
+                  <Profile name={employee.name} img={employee.picture.medium} email={employee.email} phone={employee.phone}/>
+                </section>
+              ))
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </section>
         </div>
       </div>

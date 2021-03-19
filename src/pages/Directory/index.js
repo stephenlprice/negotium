@@ -9,10 +9,6 @@ function Directory() {
   let [list, setList] = useState({});
 
   useEffect(() => {
-    // if (!list) {
-    //   return;
-    // }
-
     API.getList()
       .then(res => {
         if (res.data.length === 0) {
@@ -21,7 +17,8 @@ function Directory() {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
-        setList(res.data);
+        console.log('setList(): ', res.data.results);
+        setList(res.data.results);
       })
       .catch(err => console.log(err));
   }, []);
@@ -29,7 +26,7 @@ function Directory() {
   return (
     <div>
       <Header/>
-      <ListContainer/>
+      <ListContainer employees={list}/>
     </div>
   )
 };

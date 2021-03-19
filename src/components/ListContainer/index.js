@@ -1,11 +1,11 @@
 import React from "react";
 import List from "../List/";
-import Search from "../Search";
 
-function ListContainer() {
+function ListContainer(props) {
+  console.log('ListContainer props', props);
   return (
     <main className="container">
-      <List/>
+      <List {... props}/>
     </main>
   )
 }
