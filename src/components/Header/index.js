@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Search from "../Search";
 
 function Header() {
   return (
@@ -10,7 +11,7 @@ function Header() {
             <span id="brand" className="navbar-brand d-flex mb-0 h1 text-center">NEGOTIUM</span>
           </div>
           <div className="col-12 d-flex justify-content-center text-light text-center">
-            <h3>Employee Directory</h3>
+            <Search/>
           </div>
         </div>
       </div>
