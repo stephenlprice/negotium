@@ -5,16 +5,16 @@ import "./style.css";
 
 function Sort() {
   return (
-    <section className="container bg-transparent">
+    <section className="container bg-transparent d-none d-md-block">
       <div className="row">
-        <div className="col-2"/>
-        <div className="col">
+        <div className="col col-md-2 d-flex justify-content-center text-center"/>
+        <div className="col col-md-3 d-flex justify-content-center text-center">
           <h4><FontAwesomeIcon icon={faSort}/> Name</h4>
         </div>
-        <div className="col">
+        <div className="col col-md-4 d-flex justify-content-center text-center">
           <h4>Email</h4>
         </div>
-        <div className="col">
+        <div className="col col-md-3 d-flex justify-content-center text-center">
           <h4>Phone</h4>
         </div>
       </div>

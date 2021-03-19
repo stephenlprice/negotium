@@ -10,7 +10,7 @@ function List() {
         <div id="engineers" className="employee col-12">
           <section  className="container rounded shadow-lg my-3 p-3">
             <Sort/>
-            <hr></hr>
+            <hr className="d-none d-md-block"></hr>
             <Profile/>
           </section>
         </div>
