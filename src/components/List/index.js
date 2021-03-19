@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Profile from "../Profile/";
 import Sort from "../Sort/";
@@ -21,7 +21,7 @@ function List(props) {
                 </section>
               ))
             ) : (
-              <h3>No Results to Display</h3>
+              <div></div>
             )}
           </section>
         </div>

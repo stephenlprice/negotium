@@ -5,7 +5,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import "./style.css";
 
-function Sort() {
+
+
+function Sort(props) {
   return (
     <section className="container bg-transparent">
       <div className="row">

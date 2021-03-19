@@ -3,11 +3,11 @@ import _ from "lodash";
 import API from "../../utils/API";
 import Header from "../../components/Header";
 import ListContainer from "../../components/ListContainer";
+import EmployeesContext from "../../utils/EmployeesContext";
 
 function Directory() {
   document.title = "NEGOTIUM";
-
-  let [list, setList] = useState({});
+  const [list, setList] = useState({});
 
   useEffect(() => {
     API.getList()
@@ -24,14 +24,12 @@ function Directory() {
       .catch(err => console.log(err));
   }, []);
 
-  const handleFilterChange = event => {
-    setList();
-  };
-
   return (
     <div>
-      <Header/>
-      <ListContainer employees={list}/>
+      <EmployeesContext.Provider value={list}>
+        <Header/>
+        <ListContainer employees={list}/>
+      </EmployeesContext.Provider>
     </div>
   )
 };
