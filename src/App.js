@@ -1,11 +1,10 @@
-import Header from "./components/Header/";
-import ListContainer from "./components/ListContainer/";
+import React from 'react';
+import Directory from './pages/Directory';
 
 function App() {
   return (
     <div>
-      <Header/>
-      <ListContainer/>
+      <Directory/>
     </div>
   );
 }
