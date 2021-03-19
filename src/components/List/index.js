@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import Profile from "../Profile/";
 import Sort from "../Sort/";
+import EmployeesContext from '../../utils/EmployeesContext'; 
 
-function List(props) {
-  console.log('List props', props);
-  const employees = props.employees;
+function List() {
+  const {list} = useContext(EmployeesContext);
 
   return (
     <div className="container">
@@ -14,8 +14,8 @@ function List(props) {
           <section  className="container rounded shadow-lg my-3 p-3">
             <Sort/>
             <hr className="d-none d-md-block"></hr>
-            {employees.length ? (
-              employees.map(employee => (
+            {list.length ? (
+              list.map(employee => (
                 <section key={Math.random().toString(36).substr(2, 9)}>
                   <Profile name={employee.name} img={employee.picture.medium} email={employee.email} phone={employee.phone}/>
                 </section>

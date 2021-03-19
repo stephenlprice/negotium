@@ -7,7 +7,9 @@ import EmployeesContext from "../../utils/EmployeesContext";
 
 function Directory() {
   document.title = "NEGOTIUM";
-  const [list, setList] = useState({});
+  const [employeeState, setEmployeeState] = useState({
+    list: []
+  });
 
   useEffect(() => {
     API.getList()
@@ -18,17 +20,16 @@ function Directory() {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
-        console.log('setList(): ', res.data.results);
-        setList(res.data.results);
+        setEmployeeState({list: res.data.results});
       })
       .catch(err => console.log(err));
   }, []);
 
   return (
     <div>
-      <EmployeesContext.Provider value={list}>
+      <EmployeesContext.Provider value={employeeState}>
         <Header/>
-        <ListContainer employees={list}/>
+        <ListContainer/>
       </EmployeesContext.Provider>
     </div>
   )

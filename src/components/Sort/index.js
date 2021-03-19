@@ -7,7 +7,7 @@ import "./style.css";
 
 
 
-function Sort(props) {
+function Sort() {
   return (
     <section className="container bg-transparent">
       <div className="row">

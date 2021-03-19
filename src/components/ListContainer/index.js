@@ -1,11 +1,10 @@
 import React from "react";
 import List from "../List/";
 
-function ListContainer(props) {
-  console.log('ListContainer props', props);
+function ListContainer() {
   return (
     <main className="container">
-      <List {... props}/>
+      <List/>
     </main>
   )
 }
