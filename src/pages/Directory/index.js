@@ -10,16 +10,8 @@ function Directory() {
   const [list, setListState] = useState([]);
   const [query, setQueryState] = useState([]);
 
-  const handleSort = (direction) => {
-    if (direction === 'asc') {
-      _.orderBy(list, 'asc');
-    }
-    else if (direction === 'desc') {
-      _.orderBy(list, 'desc');
-    }
-  };
-
-  useEffect(() => {
+  // Loads the page with API data - useEffect() function available for any onload events
+  const loadDirectory = () => {
     API.getList()
       .then(res => {
         if (res.data.length === 0) {
@@ -32,9 +24,34 @@ function Directory() {
         setQueryState(res.data.results);
       })
       .catch(err => console.log(err));
-  }, []);
+  }
 
-  handleSort();
+  useEffect(() => {
+    loadDirectory();
+  },[]);
+
+  useEffect(() => {
+    console.log('List state onload', list);
+  }, [list]);
+
+  useEffect(() => {
+    console.log('Query state onload', query);
+  }, [query]);
+
+  // Sorts the list on user input
+  const handleSort = (direction) => {
+    if (direction === 'asc') {
+      _.orderBy(list, 'asc');
+    }
+    else if (direction === 'desc') {
+      _.orderBy(list, 'desc');
+    }
+  };
+
+  // Updates the view when the list state changes
+  useEffect(() => {
+  }, [list]);
+
 
   return (
     <div>
