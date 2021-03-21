@@ -9,7 +9,7 @@ function Directory() {
   document.title = "NEGOTIUM";
   const [list, setListState] = useState([]);
   const [query, setQueryState] = useState([]);
-  const [sort, setSort] = useState('');
+  const [sort, setSortState] = useState('');
 
   // Loads the page with API data - useEffect() function available for any onload events
   const loadDirectory = () => {
@@ -28,15 +28,15 @@ function Directory() {
   }
 
   // Passed to button to change sort status
-  const sortChange = () => setSort(sort === 'asc' ? 'desc' : 'asc');
+  const sortChange = () => setSortState(sort === 'asc' ? 'desc' : 'asc');
 
   // Sorts the list on input from sort
   const handleSort = (direction) => {
     if (direction === 'asc') {
-      _.orderBy(list, 'asc');
+      setListState(_.orderBy(list, ['email'], ['asc']));
     }
     else if (direction === 'desc') {
-      _.orderBy(list, 'desc');
+      setListState(_.orderBy(list, ['email'], ['desc']));
     }
   };
 
@@ -46,15 +46,6 @@ function Directory() {
 
   useEffect(() => {
     handleSort(sort);
-    console.log('List state', list);
-  }, [list]);
-
-  useEffect(() => {
-    console.log('Query state', query);
-  }, [query]);
-
-  useEffect(() => {
-    console.log(sort);
   },[sort]);
   
 
