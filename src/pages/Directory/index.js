@@ -52,15 +52,19 @@ function Directory() {
   // Passed to search bar to handle user inputs
   const searchChange = (event) => {
     const {value} = event.target;
-    setSearchState(value);
+    value.length < 1 ? setSearchState('') : setSearchState(value.trim());    
+    filter();
   };
 
   // Filters the view by a lowercase truthy comparison of first and last name with search term.
   // 'list' state is set to equal a new array filtered from the original 'query' so that new inputs
   // will be evaluated with all original API results.
   const filter = (event) => {
-    event.preventDefault();
-    if (!search) {
+    if (event) {
+      event.preventDefault();
+    };
+
+    if (!search || search === '' || search === ' ' || search === null || search === undefined) {
       setListState(query);
     }
     else {
