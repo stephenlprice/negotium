@@ -6,6 +6,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import "./style.css";
 
 function Profile(props) {
+  const emailConfig = "mailto:" + props.email + "?subject=Inquiry%20From%20NEGOTIUM&body=Hello " + props.name.first + " " + props.name.last + ",";
+
   return (
     <div className="profile" data-employee={props.name.first + props.name.last}>
         <div className="d-flex text-muted pt-3 align-items-center">
@@ -19,7 +21,7 @@ function Profile(props) {
                           <p><span className="fa-icon"><FontAwesomeIcon icon={faUser} className="d-md-none"/></span> {props.name.first} {props.name.last}</p>
                         </div>
                         <div className="col-12 col-md-5 d-flex justify-content-center text-center text-break">
-                          <p><span className="fa-icon"><FontAwesomeIcon icon={faEnvelope} className="d-md-none"/></span><a href="mailto:karla@startup.io?subject=Inquiry%20From%20Team%20Builder&body=Hello Karla," 
+                          <p><span className="fa-icon"><FontAwesomeIcon icon={faEnvelope} className="d-md-none"/></span><a href={emailConfig} 
                           target="_blank" rel="noreferrer"> {props.email}</a></p>
                         </div>
                         <div className="col-12 col-md-3 d-flex justify-content-center text-center">

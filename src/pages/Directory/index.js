@@ -25,7 +25,7 @@ function Directory() {
         setQueryState(res.data.results);
       })
       .catch(err => console.log(err));
-  }
+  };
 
   // Passed to button to change sort status
   const sortChange = () => setSortState(sort === 'asc' ? 'desc' : 'asc');
@@ -40,6 +40,9 @@ function Directory() {
     }
   };
 
+  const filter = () => {
+  };
+
   useEffect(() => {
     loadDirectory();
   },[]);
@@ -48,10 +51,9 @@ function Directory() {
     handleSort(sort);
   },[sort]);
   
-
   return (
     <div>
-      <EmployeesContext.Provider value={{list, query, sortChange}}>
+      <EmployeesContext.Provider value={{list, query, sortChange, filter}}>
         <Header/>
         <ListContainer/>
       </EmployeesContext.Provider>

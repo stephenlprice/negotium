@@ -3,7 +3,8 @@ import React from "react";
 const EmployeesContext = React.createContext({
   list: [],
   query: [],
-  sortChange: () => {}
+  sortChange: () => {},
+  filter: () => {}
 });
 
 export default EmployeesContext;

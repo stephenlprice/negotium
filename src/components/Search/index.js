@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext }  from "react";
 import "./style.css";
+import EmployeesContext from '../../utils/EmployeesContext';
 
 function Search() {
+  const {filter} = useContext(EmployeesContext);
   return (
     <section className="text-light bg-transparent">
       <div className="container-fluid">
