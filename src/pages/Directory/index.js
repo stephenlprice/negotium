@@ -9,6 +9,7 @@ function Directory() {
   document.title = "NEGOTIUM";
   const [list, setListState] = useState([]);
   const [query, setQueryState] = useState([]);
+  const [sort, setSort] = useState('');
 
   // Loads the page with API data - useEffect() function available for any onload events
   const loadDirectory = () => {
@@ -26,19 +27,10 @@ function Directory() {
       .catch(err => console.log(err));
   }
 
-  useEffect(() => {
-    loadDirectory();
-  },[]);
+  // Passed to button to change sort status
+  const sortChange = () => setSort(sort === 'asc' ? 'desc' : 'asc');
 
-  useEffect(() => {
-    console.log('List state onload', list);
-  }, [list]);
-
-  useEffect(() => {
-    console.log('Query state onload', query);
-  }, [query]);
-
-  // Sorts the list on user input
+  // Sorts the list on input from sort
   const handleSort = (direction) => {
     if (direction === 'asc') {
       _.orderBy(list, 'asc');
@@ -48,14 +40,27 @@ function Directory() {
     }
   };
 
-  // Updates the view when the list state changes
   useEffect(() => {
+    loadDirectory();
+  },[]);
+
+  useEffect(() => {
+    handleSort(sort);
+    console.log('List state', list);
   }, [list]);
 
+  useEffect(() => {
+    console.log('Query state', query);
+  }, [query]);
+
+  useEffect(() => {
+    console.log(sort);
+  },[sort]);
+  
 
   return (
     <div>
-      <EmployeesContext.Provider value={{list, query, handleSort}}>
+      <EmployeesContext.Provider value={{list, query, sortChange}}>
         <Header/>
         <ListContainer/>
       </EmployeesContext.Provider>
