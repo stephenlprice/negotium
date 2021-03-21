@@ -13,7 +13,7 @@ function Sort() {
       <div className="row">
         <div className="col col-md-2 d-none d-md-block"/>
         <div className="col col-md-2 d-flex justify-content-center text-center">
-          <h4><FontAwesomeIcon icon={faSort} onClick={sortChange}/></h4>
+          <h4 id='sort'><FontAwesomeIcon icon={faSort} onClick={sortChange}/></h4>
         </div>
         <div className="col col-md-5 d-none d-md-block text-center">
           <h4><FontAwesomeIcon icon={faEnvelope}/></h4>
