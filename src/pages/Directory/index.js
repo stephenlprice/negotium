@@ -55,20 +55,20 @@ function Directory() {
     setSearchState(value);
   };
 
+  // Filters the view by a lowercase truthy comparison of first and last name with search term.
+  // 'list' state is set to equal a new array filtered from the original 'query' so that new inputs
+  // will be evaluated with all original API results.
   const filter = (event) => {
     event.preventDefault();
     if (!search) {
       setListState(query);
     }
     else {
-      setListState(query);
-      console.log(query);
-      setListState(_.filter(list, (person) => {
+      setListState(_.filter(query, (person) => {
         const truthy = person.name.first + ' ' + person.name.last;
         return _.includes(truthy.toLowerCase() , search.toLowerCase());
-      }))
+      }));
     };
-    console.log('filter me!:', search);
   };
   
   return (
