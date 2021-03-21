@@ -5,7 +5,8 @@ const EmployeesContext = React.createContext({
   query: [],
   search: '',
   sortChange: () => {},
-  searchChange: () => {}
+  searchChange: () => {},
+  filter: () => {}
 });
 
 export default EmployeesContext;

@@ -9,8 +9,13 @@ function Directory() {
   document.title = "NEGOTIUM";
   const [list, setListState] = useState([]);
   const [query, setQueryState] = useState([]);
-  const [sort, setSortState] = useState('');
-  const [search, setSearch] = useState('');
+  const [sort, setSortState] = useState('asc');
+  const [search, setSearchState] = useState('');
+
+  // Make an API call on page load
+  useEffect(() => {
+    loadDirectory();
+  },[]);
 
   // Loads the page with API data - useEffect() function available for any onload events
   const loadDirectory = () => {
@@ -29,7 +34,10 @@ function Directory() {
   };
 
   // Passed to button to change sort status
-  const sortChange = () => setSortState(sort === 'asc' ? 'desc' : 'asc');
+  const sortChange = () => {
+    setSortState(sort === 'asc' ? 'desc' : 'asc');
+    handleSort(sort);
+  };
 
   // Sorts the list on input from sort
   const handleSort = (direction) => {
@@ -44,27 +52,20 @@ function Directory() {
   // Passed to search bar to handle user inputs
   const searchChange = (event) => {
     const {value} = event.target
-    setSearch(value);
+    setSearchState(value);
   };
 
   const filter = (event) => {
     event.preventDefault();
-    console.log('filter me!');
-    _.filter(list);
+    setListState(_.filter(list, (person) => {
+      return person.name.first === search;
+    }));
+    console.log('filter me!:', search, list);
   };
-
-  // Make an API call on page load
-  useEffect(() => {
-    loadDirectory();
-  },[]);
-
-  useEffect(() => {
-    handleSort(sort);
-  },[sort]);
   
   return (
     <div>
-      <EmployeesContext.Provider value={{list, query, search, sortChange, searchChange}}>
+      <EmployeesContext.Provider value={{list, query, search, sortChange, searchChange, filter}}>
         <Header/>
         <ListContainer/>
       </EmployeesContext.Provider>
