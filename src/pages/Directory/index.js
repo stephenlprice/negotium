@@ -10,6 +10,7 @@ function Directory() {
   const [list, setListState] = useState([]);
   const [query, setQueryState] = useState([]);
   const [sort, setSortState] = useState('');
+  const [search, setSearch] = useState('');
 
   // Loads the page with API data - useEffect() function available for any onload events
   const loadDirectory = () => {
@@ -40,9 +41,19 @@ function Directory() {
     }
   };
 
-  const filter = () => {
+  // Passed to search bar to handle user inputs
+  const searchChange = (event) => {
+    const {value} = event.target
+    setSearch(value);
   };
 
+  const filter = (event) => {
+    event.preventDefault();
+    console.log('filter me!');
+    _.filter(list);
+  };
+
+  // Make an API call on page load
   useEffect(() => {
     loadDirectory();
   },[]);
@@ -53,7 +64,7 @@ function Directory() {
   
   return (
     <div>
-      <EmployeesContext.Provider value={{list, query, sortChange, filter}}>
+      <EmployeesContext.Provider value={{list, query, search, sortChange, searchChange}}>
         <Header/>
         <ListContainer/>
       </EmployeesContext.Provider>
