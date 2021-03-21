@@ -51,16 +51,24 @@ function Directory() {
 
   // Passed to search bar to handle user inputs
   const searchChange = (event) => {
-    const {value} = event.target
+    const {value} = event.target;
     setSearchState(value);
   };
 
   const filter = (event) => {
     event.preventDefault();
-    setListState(_.filter(list, (person) => {
-      return person.name.first === search;
-    }));
-    console.log('filter me!:', search, list);
+    if (!search) {
+      setListState(query);
+    }
+    else {
+      setListState(query);
+      console.log(query);
+      setListState(_.filter(list, (person) => {
+        const truthy = person.name.first + ' ' + person.name.last;
+        return _.includes(truthy.toLowerCase() , search.toLowerCase());
+      }))
+    };
+    console.log('filter me!:', search);
   };
   
   return (
