@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/negotium/static/css/main.f6f98bd8.chunk.css",
+    "main.js": "/negotium/static/js/main.d721ea7e.chunk.js",
+    "main.js.map": "/negotium/static/js/main.d721ea7e.chunk.js.map",
+    "runtime-main.js": "/negotium/static/js/runtime-main.a2d16abd.js",
+    "runtime-main.js.map": "/negotium/static/js/runtime-main.a2d16abd.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/negotium/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.aaa48a29.chunk.js": "/negotium/static/js/2.aaa48a29.chunk.js",
+    "static/js/2.aaa48a29.chunk.js.map": "/negotium/static/js/2.aaa48a29.chunk.js.map",
+    "static/js/3.aa21cda7.chunk.js": "/negotium/static/js/3.aa21cda7.chunk.js",
+    "static/js/3.aa21cda7.chunk.js.map": "/negotium/static/js/3.aa21cda7.chunk.js.map",
+    "index.html": "/negotium/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/negotium/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.f6f98bd8.chunk.css.map": "/negotium/static/css/main.f6f98bd8.chunk.css.map",
+    "static/js/2.aaa48a29.chunk.js.LICENSE.txt": "/negotium/static/js/2.aaa48a29.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/negotium/static/media/meet-team.160af001.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a2d16abd.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.aaa48a29.chunk.js",
+    "static/css/main.f6f98bd8.chunk.css",
+    "static/js/main.d721ea7e.chunk.js"
+  ]
+}
