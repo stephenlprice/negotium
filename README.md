@@ -3,7 +3,7 @@
 
   ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
   
-  Employee directory built with React. Users generated from https://randomuser.me/. Supports sorting, filtering and search autocomplete using React's Context API    and lodash.
+  Responsive employee directory app built with React. Users generated from https://randomuser.me/. Supports sorting, filtering and search autocomplete using React's Context API    and lodash.
 
   An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
   
