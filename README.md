@@ -2,8 +2,12 @@
   # NEGOTIUM
 
   ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+  
+  Employee directory built with React. Users generated from https://randomuser.me/. Supports sorting, filtering and search autocomplete using React's Context API    and lodash.
 
   An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+  
+  Deployed site [available here](https://stephenlprice.github.io/negotium/).
   <br>
 
   ![negotium.png](./src/assets/images/negotium.png)
@@ -43,7 +47,7 @@
 
   ## Usage
   To get started, consider the following:<br>
-  Visit the deployed site [here](). The app will request a list of random employees from the [Random User Generator](https://randomuser.me). Users can then sort this list or search the employee directory with autocomplete functionality.
+  Visit the deployed site [here](https://stephenlprice.github.io/negotium/). The app will request a list of random employees from the [Random User Generator](https://randomuser.me). Users can then sort this list or search the employee directory with autocomplete functionality.
 
   <br>
 
